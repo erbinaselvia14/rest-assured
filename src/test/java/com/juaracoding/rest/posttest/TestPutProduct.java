@@ -1,4 +1,4 @@
-package com.juaracoding.rest.assured;
+package com.juaracoding.rest.posttest;
 
 import static io.restassured.RestAssured.given;
 
@@ -7,7 +7,8 @@ import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
 
-public class TestPostProduct {
+public class TestPutProduct {
+	
 
 	String endpoint = "https://mern-backend-8881.herokuapp.com/products";
 	
@@ -24,9 +25,10 @@ public class TestPostProduct {
 		.accept(ContentType.JSON)
 		.body(request.toJSONString())
 		.when()
-		.post(endpoint)
+		.put(endpoint)
 		.then()
-		.statusCode(201)
+		.statusCode(200)
 		.log().all();
 	}
+
 }
