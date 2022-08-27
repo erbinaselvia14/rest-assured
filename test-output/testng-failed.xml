@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.juaracoding.rest.assured.TestDeleteProduct">
+      <class name="com.juaracoding.rest.posttest.TestDeleteProduct">
         <methods>
           <include name="testDelete"/>
         </methods>
-      </class> <!-- com.juaracoding.rest.assured.TestDeleteProduct -->
+      </class> <!-- com.juaracoding.rest.posttest.TestDeleteProduct -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
