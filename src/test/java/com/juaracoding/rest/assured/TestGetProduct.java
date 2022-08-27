@@ -11,7 +11,7 @@ import io.restassured.response.Response;
 
 public class TestGetProduct {
 	
-	String endpoint = "https://mern-backend-8881.herokuapp.com/products?page=1";
+	String endpoint = "https://mern-backend-8881.herokuapp.com/products";
 	
 	@Test
 	public void testStatusCode() {
@@ -34,5 +34,14 @@ public class TestGetProduct {
 		.statusCode(200)
 		.body("category", hasItems("Test 5"))
 		.log().all();
+	}
+	
+	@Test
+	public void testID() {
+		given()
+		.get(endpoint)
+		.then()
+		.statusCode(200)
+		.body("_id[1]", equalTo("62b414789561ff15439844c7"));
 	}
 }

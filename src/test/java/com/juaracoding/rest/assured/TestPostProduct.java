@@ -14,19 +14,20 @@ public class TestPostProduct {
 	@Test
 	public void testPost() {
 		JSONObject request= new JSONObject();
-		request.put("name", "Erbina");
-		request.put("price", 9000);
+		request.put("name", "HP");
+		request.put("category", "Elektronik");
+		request.put("price", "2000");
 		System.out.println(request.toJSONString());
 		
 		given()
-		.header("Content-Type","application/json")
+		.header("content-type","application/json")
 		.contentType(ContentType.JSON)
 		.accept(ContentType.JSON)
 		.body(request.toJSONString())
 		.when()
 		.post(endpoint)
 		.then()
-		.statusCode(201)
+		.statusCode(200)
 		.log().all();
 	}
 }
